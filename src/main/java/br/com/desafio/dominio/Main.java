@@ -15,6 +15,15 @@ public class Main {
         curso2.setDescricao("Curso de JS Front-End");
         curso2.setCargaHoraria(30);
 
+        System.out.println(curso1.getNome());
+        System.out.println(curso1.getInstrutor().getNome());
+
+        System.out.println();
+
+        System.out.println(curso2.getNome());
+        System.out.println(curso2.getInstrutor().getNome());
+
+        System.out.println();
 
         Mentoria mentoria1 = new Mentoria();
         mentoria1.setTitulo("Mentoria de Java");
