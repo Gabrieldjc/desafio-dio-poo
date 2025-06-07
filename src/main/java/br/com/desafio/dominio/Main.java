@@ -1,6 +1,7 @@
 package br.com.desafio.dominio;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,6 +52,8 @@ public class Main {
         System.out.println("Conteúdos concluídos de Gabriel " + devGabriel.getConteudosConcluidos());
         System.out.println("XP:" + devGabriel.calcularTotalXP());
 
+        System.out.println();
+
         Dev devJoao = new Dev();
         devJoao.setNome("Joao");
         devJoao.inscreverBootcamp(bootcamp);
@@ -63,6 +66,22 @@ public class Main {
         System.out.println("Conteúdos concluídos de João " + devJoao.getConteudosConcluidos());
         System.out.println("XP:" + devJoao.calcularTotalXP());
 
+        if (devGabriel.concluiuOBootcamp(bootcamp)) {
+            System.out.println("Avalie o curso: ");
+            Scanner scanner = new Scanner(System.in);
+            int avaliar = scanner.nextInt();
+            Avaliacao avaliacao = new Avaliacao();
+            avaliacao.validarNota(avaliar);
+            System.out.println("Sua avaliação para a qualidade do curso foi a nota: " + avaliar);
+        }
 
+        if (devJoao.concluiuOBootcamp(bootcamp)) {
+            System.out.println("Avalie o curso: ");
+            Scanner scanner = new Scanner(System.in);
+            int avaliar = scanner.nextInt();
+            Avaliacao avaliacao = new Avaliacao();
+            avaliacao.validarNota(avaliar);
+            System.out.println("Sua avaliação para a qualidade do curso foi a nota: " + avaliar);
+        }
     }
 }

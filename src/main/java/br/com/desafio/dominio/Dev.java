@@ -25,6 +25,11 @@ public class Dev {
         }
     }
 
+    public boolean concluiuOBootcamp(Bootcamp bootcamp) {
+        return this.conteudosInscritos.isEmpty() &&
+                this.conteudosConcluidos.size() == bootcamp.getConteudos().size();
+    }
+
     public double calcularTotalXP() {
         return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXP).sum();
     }
